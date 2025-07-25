@@ -1,5 +1,5 @@
 import React from 'react'
-import ConsumerHomePage from '../components/ConsumerHomePage'
+import ConsumerHomePage from './homepages/consumerHomePage/ConsumerHomePage'
 
 const Home = () => {
   return (

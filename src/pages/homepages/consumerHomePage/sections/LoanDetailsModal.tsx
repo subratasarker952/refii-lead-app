@@ -111,7 +111,7 @@ export function LoanDetailsModal({ loan, onClose }: LoanDetailsModalProps) {
             Close
           </Button>
           <Button asChild>
-            <Link href="/refinance-process">Apply for This Loan</Link>
+            <Link to="/refinance-process">Apply for This Loan</Link>
           </Button>
         </div>
       </DialogContent>

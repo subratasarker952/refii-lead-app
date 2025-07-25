@@ -1,7 +1,8 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import React from 'react'
 import { TrendingUp, DollarSign, Home, Users, MapPin, Calendar } from 'lucide-react'
-import Image from "next/image"
+import Badge from '../../../../components/ui/Badge'
+import { Card, CardContent } from '../../../../components/ui/Card'
+
 
 export default function AustralianStats() {
   const stats = [
@@ -53,7 +54,7 @@ export default function AustralianStats() {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <Badge variant="secondary" className="mb-4 bg-blue-100 text-blue-800">
+          <Badge variant="default" className="mb-4 bg-blue-100 text-blue-800">
             <MapPin className="w-3 h-3 mr-1" />
             Australia Wide
           </Badge>
@@ -100,7 +101,7 @@ export default function AustralianStats() {
                     <MapPin className="w-5 h-5 text-blue-600" />
                     <span className="font-semibold text-gray-900">{location.city}</span>
                   </div>
-                  <Badge variant="secondary" className="bg-blue-100 text-blue-800">
+                  <Badge variant="default" className="bg-blue-100 text-blue-800">
                     {location.loans}
                   </Badge>
                 </div>

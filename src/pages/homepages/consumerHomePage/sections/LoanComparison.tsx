@@ -191,7 +191,7 @@ export function LoanComparison({ loanAmount, loanTerm }: LoanComparisonProps) {
                 </TableCell>
                 <TableCell>
                   <Button asChild size="sm">
-                    <Link href="/loan-info/employment">
+                    <Link to="/loan-info/employment">
                       Apply <ArrowRight className="ml-2 h-3 w-3" />
                     </Link>
                   </Button>

@@ -1,12 +1,10 @@
-"use client"
-
-import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Slider } from "@/components/ui/slider"
+import React, { useState } from "react"
 import { Calculator, TrendingUp, DollarSign, ArrowRight, Home, Percent } from 'lucide-react'
-import Link from "next/link"
+import Badge from "../../../../components/ui/Badge"
+import { Card, CardContent, CardHeader, CardTitle } from "../../../../components/ui/Card"
+import { Link } from "react-router-dom"
+import Slider from "../../../../components/ui/Slider"
+import Button from "../../../../components/ui/Button"
 
 export default function SavingsCalculator() {
   const [loanAmount, setLoanAmount] = useState([500000])
@@ -15,7 +13,7 @@ export default function SavingsCalculator() {
   const [loanTerm, setLoanTerm] = useState([30])
 
   // Calculate monthly payments
-  const calculateMonthlyPayment = (principal: number, rate: number, years: number) => {
+  const calculateMonthlyPayment = (principal, rate, years) => {
     const monthlyRate = rate / 100 / 12
     const numPayments = years * 12
     return (
@@ -34,7 +32,7 @@ export default function SavingsCalculator() {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <Badge variant="secondary" className="mb-4 bg-green-100 text-green-800">
+          <Badge variant="default" className="mb-4 bg-green-100 text-green-800">
             <Calculator className="w-3 h-3 mr-1" />
             Savings Calculator
           </Badge>
@@ -58,7 +56,7 @@ export default function SavingsCalculator() {
               {/* Loan Amount */}
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <label className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                  <label className="text-lg font-medium text-gray-700 flex items-center gap-2">
                     <Home className="w-4 h-4" />
                     Loan Amount
                   </label>
@@ -81,7 +79,7 @@ export default function SavingsCalculator() {
               {/* Current Rate */}
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <label className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                  <label className="text-lg font-medium text-gray-700 flex items-center gap-2">
                     <Percent className="w-4 h-4" />
                     Current Rate
                   </label>
@@ -104,7 +102,7 @@ export default function SavingsCalculator() {
               {/* New Rate */}
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <label className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                  <label className="text-lg font-medium text-gray-700 flex items-center gap-2">
                     <TrendingUp className="w-4 h-4" />
                     Potential New Rate
                   </label>
@@ -127,7 +125,7 @@ export default function SavingsCalculator() {
               {/* Loan Term */}
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <label className="text-sm font-medium text-gray-700">Loan Term</label>
+                  <label className="text-lg font-medium text-gray-700">Loan Term</label>
                   <span className="text-lg font-semibold text-gray-900">{loanTerm[0]} years</span>
                 </div>
                 <Slider value={loanTerm} onValueChange={setLoanTerm} max={30} min={10} step={5} className="w-full" />
@@ -156,7 +154,7 @@ export default function SavingsCalculator() {
                 <div className="text-4xl font-bold text-green-600 mb-2">
                   ${Math.round(monthlySavings).toLocaleString()}
                 </div>
-                <div className="text-sm text-gray-600">
+                <div className="text-lg text-gray-600">
                   ${Math.round(currentPayment).toLocaleString()} → ${Math.round(newPayment).toLocaleString()} per month
                 </div>
               </CardContent>
@@ -177,7 +175,7 @@ export default function SavingsCalculator() {
                 <div className="text-4xl font-bold text-blue-600 mb-2">
                   ${Math.round(yearlySavings).toLocaleString()}
                 </div>
-                <div className="text-sm text-gray-600">Save this much every year</div>
+                <div className="text-lg text-gray-600">Save this much every year</div>
               </CardContent>
             </Card>
 
@@ -196,7 +194,7 @@ export default function SavingsCalculator() {
                 <div className="text-4xl font-bold text-purple-600 mb-4">
                   ${Math.round(totalSavings).toLocaleString()}
                 </div>
-                <Link href="/signup">
+                <Link to="/signup">
                   <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
                     Start Your Application
                     <ArrowRight className="ml-2 w-4 h-4" />

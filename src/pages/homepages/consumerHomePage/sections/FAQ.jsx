@@ -1,16 +1,14 @@
-"use client"
-
-import { useState } from "react"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+import React, { useState } from 'react'
 import { ChevronDown, ChevronUp, HelpCircle, Shield, Clock, DollarSign, Users, Phone } from "lucide-react"
-import Link from "next/link"
+import Badge from '../../../../components/ui/Badge'
+import { Card, CardContent } from '../../../../components/ui/Card'
+import { Link } from 'react-router-dom'
+import Button from '../../../../components/ui/Button'
 
 export default function FAQ() {
-  const [openItems, setOpenItems] = useState<number[]>([0])
+  const [openItems, setOpenItems] = useState([0])
 
-  const toggleItem = (index: number) => {
+  const toggleItem = (index) => {
     setOpenItems((prev) => (prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]))
   }
 
@@ -62,7 +60,7 @@ export default function FAQ() {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <Badge variant="secondary" className="mb-4 bg-blue-100 text-blue-800">
+          <Badge variant="default" className="mb-4 bg-blue-100 text-blue-800">
             <HelpCircle className="w-3 h-3 mr-1" />
             Frequently Asked Questions
           </Badge>
@@ -78,7 +76,7 @@ export default function FAQ() {
             <div className="space-y-4">
               {faqs.map((faq, index) => (
                 <Card key={index} className="border border-gray-200 hover:border-blue-200 transition-colors">
-                  <CardContent className="p-0">
+                  <CardContent className="p-1">
                     <button
                       onClick={() => toggleItem(index)}
                       className="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
@@ -147,10 +145,10 @@ export default function FAQ() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Still Have Questions?</h3>
                 <p className="text-gray-600 mb-4">Speak with one of our loan specialists</p>
                 <div className="space-y-3">
-                  <Link href="tel:1300466366">
+                  <Link to="tel:1300466366">
                     <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">Call 1300 HOME ON</Button>
                   </Link>
-                  <Link href="/support">
+                  <Link to="/support">
                     <Button variant="outline" className="w-full bg-transparent">
                       Live Chat Support
                     </Button>

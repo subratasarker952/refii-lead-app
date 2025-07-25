@@ -1,6 +1,8 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import React from 'react'
 import { DollarSign, Clock, Shield, TrendingUp, CheckCircle, Award } from 'lucide-react'
+import Badge from '../../../../components/ui/Badge'
+import { Card, CardContent } from '../../../../components/ui/Card'
+
 
 export default function Benefits() {
   const benefits = [
@@ -58,7 +60,7 @@ export default function Benefits() {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <Badge variant="secondary" className="mb-4 bg-blue-100 text-blue-800">
+          <Badge variant="success" className="mb-4 bg-blue-100 text-blue-800">
             <Award className="w-3 h-3 mr-1" />
             Your Benefits
           </Badge>

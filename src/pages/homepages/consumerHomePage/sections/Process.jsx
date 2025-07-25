@@ -1,8 +1,9 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
+import React from 'react'
 import { FileText, Search, TrendingUp, CheckCircle, ArrowRight, Clock, Users, Award } from 'lucide-react'
-import Link from "next/link"
+import Badge from '../../../../components/ui/Badge'
+import Button from '../../../../components/ui/Button'
+import { Link } from 'react-router-dom'
+import { Card, CardContent } from '../../../../components/ui/Card'
 
 export default function Process() {
   const steps = [
@@ -45,7 +46,7 @@ export default function Process() {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <Badge variant="secondary" className="mb-4 bg-green-100 text-green-800">
+          <Badge variant="success" className="mb-4 bg-green-100 text-green-800">
             <Award className="w-3 h-3 mr-1" />
             Simple Process
           </Badge>
@@ -114,7 +115,7 @@ export default function Process() {
 
         {/* CTA */}
         <div className="text-center">
-          <Link href="/signup">
+          <Link to="/signup">
             <Button
               size="lg"
               className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
-import { supabase } from "../lib/supabaseClient";
-import HomeOnlineLogo from "./HomeOnlineLogo";
+import { useAuth } from "../../context/AuthContext";
+import { supabase } from "../../lib/supabaseClient";
+import HomeOnlineLogo from "../HomeOnlineLogo";
 
 export default function Navbar() {
   const { user, setUser } = useAuth();
@@ -24,7 +24,7 @@ export default function Navbar() {
 
   return (
     <nav className="bg-blue-600 border-b shadow-sm sticky top-0 z-50 text-white">
-      <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="text-xl font-bold">
           <HomeOnlineLogo/>
@@ -79,7 +79,7 @@ export default function Navbar() {
         <div className="md:hidden">
           <button onClick={() => setMenuOpen(!menuOpen)}>
             <svg
-              className="w-6 h-6 text-gray-700"
+              className="w-6 h-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -97,23 +97,23 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden px-4 pb-4 space-y-2">
-          <Link to="/" className="block text-gray-700 hover:text-indigo-600">Home</Link>
-          <Link to="/apply" className="block text-gray-700 hover:text-indigo-600">Apply</Link>
+        <div className="md:hidden px-4 pb-4 space-y-1 text-center">
+          <Link to="/" className="block hover:bg-gray-300 py-2 rounded-md hover:text-black">Home</Link>
+          <Link to="/apply" className="block hover:bg-gray-300 py-2 rounded-md hover:text-black">Apply</Link>
           {user && (
-            <Link to="/admin" className="block text-gray-700 hover:text-indigo-600">Admin</Link>
+            <Link to="/admin" className="block hover:bg-gray-300 py-2 rounded-md hover:text-black">Admin</Link>
           )}
           {!user ? (
             <>
-              <Link to="/login" className="block text-gray-600 hover:text-indigo-600">Login</Link>
-              <Link to="/signup" className="block text-indigo-600 hover:text-indigo-700">Sign Up</Link>
+              <Link to="/login" className="block hover:bg-gray-300 py-2 rounded-md hover:text-black">Login</Link>
+              <Link to="/signup" className="block hover:bg-gray-300 py-2 rounded-md hover:text-black">Sign Up</Link>
             </>
           ) : (
             <>
-              <Link to="/dashboard" className="block text-gray-700 hover:text-indigo-600">Dashboard</Link>
+              <Link to="/dashboard" className="block hover:bg-gray-300 py-2 rounded-md hover:text-black">Dashboard</Link>
               <button
                 onClick={handleLogout}
-                className="block w-full text-left text-red-500 hover:text-red-600"
+                className="block w-full border rounded-md py-2"
               >
                 Logout
               </button>

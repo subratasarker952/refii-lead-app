@@ -1,7 +1,7 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import React from 'react'
 import { Star, Quote, MapPin } from 'lucide-react'
-import Image from "next/image"
+import Badge from '../../../../components/ui/Badge'
+import { Card, CardContent } from '../../../../components/ui/Card'
 
 export default function Testimonials() {
   const testimonials = [
@@ -49,7 +49,7 @@ export default function Testimonials() {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <Badge variant="secondary" className="mb-4 bg-yellow-100 text-yellow-800">
+          <Badge variant="warning" className="mb-4 bg-yellow-100 text-yellow-800">
             <Star className="w-3 h-3 mr-1" />
             Customer Stories
           </Badge>
@@ -80,10 +80,9 @@ export default function Testimonials() {
                 {/* Customer Info */}
                 <div className="flex items-center gap-4 mb-4">
                   <div className="relative w-12 h-12 rounded-full overflow-hidden bg-gray-200">
-                    <Image
+                    <img
                       src={testimonial.image || "/placeholder.svg"}
                       alt={testimonial.name}
-                      fill
                       className="object-cover"
                     />
                   </div>

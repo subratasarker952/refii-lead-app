@@ -136,7 +136,7 @@ export function CashbackCalculator() {
                   <div className="text-sm text-gray-600">in broker fees</div>
                 </div>
 
-                <Link href="/loan-selection">
+                <Link to="/loan-selection">
                   <Button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white">Start Saving Today</Button>
                 </Link>
               </div>

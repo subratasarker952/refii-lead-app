@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 import { ArrowRight, Star, Shield, Clock, DollarSign, Calculator } from "lucide-react"
-import Badge from "./ui/Badge"
-import Button from "./ui/Button"
-import Input from "./ui/Input"
+import Badge from "../../../../components/ui/Badge"
+import Button from "../../../../components/ui/Button"
+import Input from "../../../../components/ui/Input"
 
 export default function Hero() {
   const [loanAmount, setLoanAmount] = useState("")
@@ -25,7 +25,7 @@ export default function Hero() {
           {/* Left Column - Content */}
           <div className="space-y-8">
             {/* Trust Badge */}
-            <Badge variant="secondary" className="bg-white/20 text-white border-white/30 backdrop-blur-sm">
+            <Badge variant="default" className="bg-white/20 text-white border-white/30 backdrop-blur-sm">
               <Star className="w-3 h-3 mr-1" />
               4.9★ Rated • 25,000+ Happy Customers
             </Badge>
@@ -134,7 +134,6 @@ export default function Hero() {
                 width={600}
                 height={500}
                 className="rounded-2xl shadow-2xl w-full h-auto object-cover"
-                priority
               />
             </div>
 

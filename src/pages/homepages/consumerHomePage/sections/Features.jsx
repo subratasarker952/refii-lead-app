@@ -1,6 +1,7 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import React from 'react'
 import { TrendingUp, Clock, Shield, Users, Calculator, FileText, CheckCircle, Zap } from 'lucide-react'
+import Badge from '../../../../components/ui/Badge'
+import { Card, CardContent } from '../../../../components/ui/Card'
 
 export default function Features() {
   const features = [
@@ -53,7 +54,7 @@ export default function Features() {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <Badge variant="secondary" className="mb-4 bg-blue-100 text-blue-800">
+          <Badge variant="success" className="mb-4 bg-blue-100 text-blue-800">
             <Zap className="w-3 h-3 mr-1" />
             Why Choose Home Online
           </Badge>

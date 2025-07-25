@@ -1,7 +1,7 @@
 import React from "react"
 import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram, Shield, Award, Users } from "lucide-react"
 import { Link } from "react-router-dom"
-// import HomeOnlineLogo from "./HomeOnlineLogo"
+import HomeOnlineLogo from "../HomeOnlineLogo"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -14,8 +14,7 @@ export default function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="mb-6">
-              Logo
-              {/* <HomeOnlineLogo /> */}
+              <HomeOnlineLogo />
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               Australia's first reverse auction platform for home loans. Banks compete for your business, you save
@@ -49,16 +48,14 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link
-                 Link to="/loan-application/first-time-buyer"
+                <Link to="/loan-application/first-time-buyer"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   First Home Buyer
                 </Link>
               </li>
               <li>
-                <Link
-                 Link to="/loan-application/new-purchase"
+                <Link to="/loan-application/new-purchase"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Home Purchase

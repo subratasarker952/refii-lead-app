@@ -1,8 +1,10 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Building2, TrendingUp, Users, Award, ArrowRight, CheckCircle } from 'lucide-react'
-import Link from "next/link"
+
+import React from 'react'
+import { Building2, TrendingUp, Users, Award, ArrowRight, CheckCircle, Link } from 'lucide-react'
+import Badge from '../../../../components/ui/Badge'
+import { Card, CardContent } from '../../../../components/ui/Card'
+import Button from '../../../../components/ui/Button'
+
 
 export default function CompareLendersSection() {
   const lenders = [
@@ -48,7 +50,7 @@ export default function CompareLendersSection() {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <Badge variant="secondary" className="mb-4 bg-green-100 text-green-800">
+          <Badge variant="success" className="mb-4 bg-green-100 text-green-800">
             <Building2 className="w-3 h-3 mr-1" />
             Lender Network
           </Badge>
@@ -78,7 +80,7 @@ export default function CompareLendersSection() {
           </div>
 
           <div className="text-center">
-            <Badge variant="outline" className="text-sm">
+            <Badge variant="success" className="text-sm">
               + 32 more specialist lenders
             </Badge>
           </div>
@@ -139,7 +141,7 @@ export default function CompareLendersSection() {
                 <div className="inline-block bg-white rounded-2xl p-6 shadow-lg">
                   <div className="text-4xl font-bold text-green-600 mb-2">$47,000</div>
                   <div className="text-gray-600 mb-4">Average customer savings</div>
-                  <Link href="/signup">
+                  <Link to="/signup">
                     <Button className="bg-blue-600 hover:bg-blue-700 text-white">
                       Start Saving Now
                       <ArrowRight className="ml-2 w-4 h-4" />
